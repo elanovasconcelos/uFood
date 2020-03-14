@@ -11,12 +11,29 @@ import UIKit
 final class PlaceCellViewModel: NSObject, CellViewModel {
     let cellIdentifier = "PlaceTableViewCell"
     
+    let name: String
+    let openNow: String
+    let rating: String
+    
+    init(place: Place) {
+        self.name = place.name
+        self.rating = "\(place.rating)"
+        
+        if let openNow = place.openingHours?.openNow {
+            self.openNow = "\(openNow)"
+        }else {
+            self.openNow = ""
+        }
+    }
+    
     func configure(cell: UITableViewCell) {
         guard let cell = cell as? PlaceCell else {
             return
         }
         
-        
+        cell.nameLabel.text = name
+        cell.openLabel.text = openNow
+        cell.ratingLabel.text = rating
     }
     
 
