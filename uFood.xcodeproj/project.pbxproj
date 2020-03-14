@@ -25,6 +25,9 @@
 		036FFFDB241D188E00934F66 /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFDA241D188E00934F66 /* PlaceListViewModel.swift */; };
 		036FFFDE241D213000934F66 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFDD241D213000934F66 /* UIViewExtension.swift */; };
 		036FFFE0241D215700934F66 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFDF241D215700934F66 /* UITableViewExtension.swift */; };
+		036FFFE3241D87FF00934F66 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE1241D87FF00934F66 /* ImageTableViewCell.swift */; };
+		036FFFE4241D87FF00934F66 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036FFFE2241D87FF00934F66 /* ImageTableViewCell.xib */; };
+		036FFFE6241D88D100934F66 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE5241D88D100934F66 /* ImageCell.swift */; };
 		03DE0C54241ADAE800D5D573 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C53241ADAE800D5D573 /* Place.swift */; };
 		03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */; };
 		03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C57241ADCC200D5D573 /* Geometry.swift */; };
@@ -69,6 +72,9 @@
 		036FFFDA241D188E00934F66 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		036FFFDD241D213000934F66 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		036FFFDF241D215700934F66 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		036FFFE1241D87FF00934F66 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		036FFFE2241D87FF00934F66 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		036FFFE5241D88D100934F66 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		03DE0C53241ADAE800D5D573 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		03DE0C57241ADCC200D5D573 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 				033C55272419B847007C1E19 /* PlaceTableViewCell.xib */,
 				033C552A2419B866007C1E19 /* ReviewTableViewCell.swift */,
 				033C552B2419B866007C1E19 /* ReviewTableViewCell.xib */,
+				036FFFE1241D87FF00934F66 /* ImageTableViewCell.swift */,
+				036FFFE2241D87FF00934F66 /* ImageTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				033C55382419C1F5007C1E19 /* PlaceCell.swift */,
+				036FFFE5241D88D100934F66 /* ImageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036FFFE4241D87FF00934F66 /* ImageTableViewCell.xib in Resources */,
 				033C55082419B334007C1E19 /* LaunchScreen.storyboard in Resources */,
 				033C55052419B334007C1E19 /* Assets.xcassets in Resources */,
 				033C552D2419B866007C1E19 /* ReviewTableViewCell.xib in Resources */,
@@ -402,7 +412,9 @@
 				03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */,
 				03DE0C5C241ADD8A00D5D573 /* OpeningHours.swift in Sources */,
 				033C55332419BDB2007C1E19 /* CellViewModel.swift in Sources */,
+				036FFFE6241D88D100934F66 /* ImageCell.swift in Sources */,
 				036FFFE0241D215700934F66 /* UITableViewExtension.swift in Sources */,
+				036FFFE3241D87FF00934F66 /* ImageTableViewCell.swift in Sources */,
 				033C552C2419B866007C1E19 /* ReviewTableViewCell.swift in Sources */,
 				033C55222419B584007C1E19 /* BaseViewController.swift in Sources */,
 				033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */,
