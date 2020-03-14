@@ -69,7 +69,7 @@ class BaseViewController: UIViewController {
     private func setupIndicator() {
         view.addSubview(activityIndicator)
         
-        activityIndicator.centetAnchor(view: view)
+        activityIndicator.centerAnchor(view: view)
     }
 }
 

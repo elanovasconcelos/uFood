@@ -10,8 +10,8 @@ import UIKit
 
 protocol PlaceCell {
 
-    var nameLabel: UILabel { get }
-    var openLabel: UILabel { get }
-    var ratingLabel: UILabel { get }
+    var nameLabel: UILabel! { get }
+    var openLabel: UILabel! { get }
+    var ratingLabel: UILabel! { get }
     
 }
