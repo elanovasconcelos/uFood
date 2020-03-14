@@ -19,8 +19,10 @@ final class PlaceListViewModel: NSObject {
     
     weak var delegate: PlaceListViewModelDelegate?
     
-    let cellModels = Observable<[Place]>([])
+    let cellModels = Observable<[PlaceCellViewModel]>([])
+    let cellIdentifiers = [PlaceCellViewModel.cellIdentifier]
     
+    //MARK: -
     init(server: RequestPlaces = PlaceModel()) {
         self.server = server
     }
@@ -34,7 +36,7 @@ final class PlaceListViewModel: NSObject {
             case .failure(let error):
                 self.delegate?.placeListViewModel(self, didReceived: error)
             case .success(let placeResponse):
-                self.cellModels.value = placeResponse.places
+                self.cellModels.value = PlaceCellViewModel.from(places: placeResponse.places)
             }
         }
     }
