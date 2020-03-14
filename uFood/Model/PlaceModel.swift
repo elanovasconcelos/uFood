@@ -16,7 +16,7 @@ final class PlaceModel: NSObject {
     private let key: String
     
     //MARK: -
-    init(key: String = "AIzaSyARhfSu6d8_nLkD7jG7wOqOe9d6mNnUF5o") {
+    init(key: String = "AIzaSyARhfSu6d8_nLkD7jG7wOqOe9d6mNnUF5o") { //TODO: the key should not be here in a real project
         self.key = key
     }
     
@@ -80,9 +80,7 @@ final class PlaceModel: NSObject {
             completionHandler(.success(data))
             
         }.resume()
-    }
-    
-    
+    } 
 }
 
 //MARK: - RequestPlaces
@@ -99,7 +97,6 @@ extension PlaceModel: RequestPlaces {
                 case .failure(let resultErro): lastError = resultErro
                 case .success(let response):
                     if response.status == PlaceModel.okStatus {
-                        print("adding: \(response.places.count)")
                         places.append(contentsOf: response.places)
                     }
                 }
