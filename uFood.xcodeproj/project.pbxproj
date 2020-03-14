@@ -10,7 +10,6 @@
 		033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FB2419B331007C1E19 /* AppDelegate.swift */; };
 		033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FD2419B331007C1E19 /* SceneDelegate.swift */; };
 		033C55002419B331007C1E19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FF2419B331007C1E19 /* ViewController.swift */; };
-		033C55032419B331007C1E19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033C55012419B331007C1E19 /* Main.storyboard */; };
 		033C55052419B334007C1E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033C55042419B334007C1E19 /* Assets.xcassets */; };
 		033C55082419B334007C1E19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033C55062419B334007C1E19 /* LaunchScreen.storyboard */; };
 		033C55222419B584007C1E19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55212419B584007C1E19 /* BaseViewController.swift */; };
@@ -23,6 +22,7 @@
 		033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */; };
 		036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD0241C402C00934F66 /* PlaceModelTests.swift */; };
 		036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD3241C503300934F66 /* ThreadHelper.swift */; };
+		036FFFD7241D006B00934F66 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD6241D006B00934F66 /* PlaceListViewController.swift */; };
 		03DE0C54241ADAE800D5D573 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C53241ADAE800D5D573 /* Place.swift */; };
 		03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */; };
 		03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C57241ADCC200D5D573 /* Geometry.swift */; };
@@ -49,7 +49,6 @@
 		033C54FB2419B331007C1E19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033C54FD2419B331007C1E19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		033C54FF2419B331007C1E19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		033C55022419B331007C1E19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		033C55042419B334007C1E19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		033C55072419B334007C1E19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033C55092419B335007C1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		036FFFD0241C402C00934F66 /* PlaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelTests.swift; sourceTree = "<group>"; };
 		036FFFD3241C503300934F66 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
+		036FFFD6241D006B00934F66 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		03DE0C53241ADAE800D5D573 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		03DE0C57241ADCC200D5D573 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -115,18 +115,16 @@
 		033C54FA2419B331007C1E19 /* uFood */ = {
 			isa = PBXGroup;
 			children = (
+				036FFFD8241D0FAC00934F66 /* Delegate */,
+				036FFFD5241CFFE700934F66 /* Storyboard */,
 				036FFFD2241C500500934F66 /* Helper */,
 				03DE0C51241ADA6700D5D573 /* Model */,
 				033C55342419C0E4007C1E19 /* ViewModel */,
 				033C55242419B7D2007C1E19 /* View */,
 				033C55202419B560007C1E19 /* Controller */,
 				033C551D2419B3C6007C1E19 /* Protocol */,
-				033C54FB2419B331007C1E19 /* AppDelegate.swift */,
-				033C54FD2419B331007C1E19 /* SceneDelegate.swift */,
 				033C54FF2419B331007C1E19 /* ViewController.swift */,
-				033C55012419B331007C1E19 /* Main.storyboard */,
 				033C55042419B334007C1E19 /* Assets.xcassets */,
-				033C55062419B334007C1E19 /* LaunchScreen.storyboard */,
 				033C55092419B335007C1E19 /* Info.plist */,
 			);
 			path = uFood;
@@ -155,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				033C55212419B584007C1E19 /* BaseViewController.swift */,
+				036FFFD6241D006B00934F66 /* PlaceListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,6 +223,23 @@
 				036FFFD3241C503300934F66 /* ThreadHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		036FFFD5241CFFE700934F66 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				033C55062419B334007C1E19 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		036FFFD8241D0FAC00934F66 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				033C54FB2419B331007C1E19 /* AppDelegate.swift */,
+				033C54FD2419B331007C1E19 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		03DE0C51241ADA6700D5D573 /* Model */ = {
@@ -340,7 +356,6 @@
 			files = (
 				033C55082419B334007C1E19 /* LaunchScreen.storyboard in Resources */,
 				033C55052419B334007C1E19 /* Assets.xcassets in Resources */,
-				033C55032419B331007C1E19 /* Main.storyboard in Resources */,
 				033C552D2419B866007C1E19 /* ReviewTableViewCell.xib in Resources */,
 				033C55292419B847007C1E19 /* PlaceTableViewCell.xib in Resources */,
 			);
@@ -376,6 +391,7 @@
 				033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */,
 				033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */,
 				033C55282419B847007C1E19 /* PlaceTableViewCell.swift in Sources */,
+				036FFFD7241D006B00934F66 /* PlaceListViewController.swift in Sources */,
 				033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */,
 				03DE0C54241ADAE800D5D573 /* Place.swift in Sources */,
 				03DE0C63241AE43400D5D573 /* RequestPlaces.swift in Sources */,
@@ -401,14 +417,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		033C55012419B331007C1E19 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				033C55022419B331007C1E19 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		033C55062419B334007C1E19 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -540,6 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = uFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elanovasconcelos.uFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -557,6 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = uFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elanovasconcelos.uFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
