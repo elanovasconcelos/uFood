@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CellViewModel {
-    var cellIdentifier: String { get }
+    static var cellIdentifier: String { get }
     
     func configure(cell: UITableViewCell)
 }

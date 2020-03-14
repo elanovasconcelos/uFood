@@ -9,7 +9,7 @@
 import UIKit
 
 final class PlaceCellViewModel: NSObject, CellViewModel {
-    let cellIdentifier = "PlaceTableViewCell"
+    static let cellIdentifier = "PlaceTableViewCell"
     
     let name: String
     let openNow: String
@@ -17,10 +17,10 @@ final class PlaceCellViewModel: NSObject, CellViewModel {
     
     init(place: Place) {
         self.name = place.name
-        self.rating = "\(place.rating)"
+        self.rating = "Rating: \(place.rating)"
         
-        if let openNow = place.openingHours?.openNow {
-            self.openNow = "\(openNow)"
+        if let openNow = place.openingHours?.openNow, openNow {
+            self.openNow = "Open Now!"
         }else {
             self.openNow = ""
         }
@@ -37,4 +37,7 @@ final class PlaceCellViewModel: NSObject, CellViewModel {
     }
     
 
+    static func from(places: [Place]) -> [PlaceCellViewModel] {
+        return places.map({ PlaceCellViewModel(place: $0) })
+    }
 }
