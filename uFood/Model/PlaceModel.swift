@@ -21,7 +21,7 @@ final class PlaceModel: NSObject {
     }
     
     //MARK: -
-    func completePlaceUrl(with location: Location, type: RequestPlaceType = .restaurant) -> URL? {
+    func completePlaceUrl(with location: Location, type: RequestPlacesType = .restaurant) -> URL? {
         //TODO: improve configuration, export fields for customisation
         //location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY
         let radius = "&radius=1500"
@@ -87,7 +87,7 @@ final class PlaceModel: NSObject {
 
 //MARK: - RequestPlaces
 extension PlaceModel: RequestPlaces {
-    func places(at location: Location, types: [RequestPlaceType] = [.bar, .restaurant, .cafe], completionHandler: @escaping (Result<PlaceResponse, ServerError>) -> Void) {
+    func places(at location: Location, types: [RequestPlacesType] = [.bar, .restaurant, .cafe], completionHandler: @escaping (Result<PlaceResponse, ServerError>) -> Void) {
         var lastError: ServerError?
         var places = [Place]()
         
@@ -120,7 +120,7 @@ extension PlaceModel: RequestPlaces {
                 completionHandler(.failure(error))
                 return
             }
-            print("complete!")
+
             let response = PlaceResponse(places: places.sorted().reversed(), status: PlaceModel.okStatus)
             completionHandler(.success(response))
         }
@@ -155,9 +155,4 @@ enum ServerError: Error {
     case image
 }
 
-//MARK: -
-enum RequestPlaceType: String {
-    case bar
-    case restaurant
-    case cafe
-}
+
