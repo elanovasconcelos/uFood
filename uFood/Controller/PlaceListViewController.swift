@@ -8,16 +8,62 @@
 
 import UIKit
 
-final class PlaceListViewController: UIViewController {
+final class PlaceListViewController: BaseViewController {
 
+    private let placeListViewModel: PlaceListViewModel
+    
+    //MARK: -
+    init(placeListViewModel: PlaceListViewModel = PlaceListViewModel()) {
+        self.placeListViewModel = placeListViewModel
+        
+        super.init(cellIdentifiers: placeListViewModel.cellIdentifiers)
+        
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
+        setup()
+        updatePlaces()
     }
     
-
+    private func setup() {
+        setupViewModel()
+        setupBinding()
+        setupTable()
+    }
     
+    private func setupViewModel() {
+        placeListViewModel.delegate = self
+    }
+    
+    private func setupBinding() {
+        placeListViewModel.cellModels.valueChanged = { [weak self] newPlaces in
+            self?.hideActivityIndicator()
+            self?.isTableHidden = false
+            self?.items = newPlaces
+        }
+    }
+    
+    private func setupTable() {
+        isTableHidden = true
+    }
+    
+    private func updatePlaces() {
+        showActivityIndicator()
+        placeListViewModel.requestPlaces()
+    }
 
+}
+
+extension PlaceListViewController: PlaceListViewModelDelegate {
+    func placeListViewModel(_ placeListViewModel: PlaceListViewModel, didReceived error: ServerError) {
+        hideActivityIndicator()
+        print("placeListViewModel|didReceived - error: \(error)")
+    }
 }
