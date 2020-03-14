@@ -16,7 +16,7 @@ final class PlaceModel: NSObject {
     private let key: String
     
     //MARK: -
-    init(key: String = "AIzaSyARhfSu6d8_nLkD7jG7wOqOe9d6mNnUF5o") { //TODO: the key should not be here in a real project
+    init(key: String = "AIzaSyB8bJvTYtxgxdZlf2yf9TrMNgfHIcq7CYQ") { //TODO: the key should not be here in a real project
         self.key = key
     }
     
@@ -98,6 +98,8 @@ extension PlaceModel: RequestPlaces {
                 case .success(let response):
                     if response.status == PlaceModel.okStatus {
                         places.append(contentsOf: response.places)
+                    }else {
+                        lastError = .status
                     }
                 }
                 placeDispatchGroup.leave()
@@ -150,6 +152,7 @@ enum ServerError: Error {
     case noData
     case decoder
     case image
+    case status
 }
 
 
