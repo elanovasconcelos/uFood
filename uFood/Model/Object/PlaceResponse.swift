@@ -13,7 +13,7 @@ struct PlaceResponse: Decodable {
     let status: String
     
     private enum CodingKeys : String, CodingKey {
-        case places = "candidates"
+        case places = "results"
         case status
     }
 }

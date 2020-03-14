@@ -9,17 +9,28 @@
 import UIKit
 
 struct Place: Decodable {
-    let formattedAddress: String
+    let address: String
     let name: String
     let rating: Double
-    let openingHours: OpeningHours
+    let openingHours: OpeningHours?
     let photos: [Photo]
     
     private enum CodingKeys : String, CodingKey {
-        case formattedAddress = "formatted_address"
+        case address = "vicinity"
         case openingHours = "opening_hours"
         case name
         case rating
         case photos
+    }
+}
+
+//MARK: - Comparable
+extension Place: Comparable {
+    static func == (lhs: Place, rhs: Place) -> Bool {
+        return lhs.rating == rhs.rating
+    }
+    
+    static func < (lhs: Place, rhs: Place) -> Bool {
+        return lhs.rating < rhs.rating
     }
 }

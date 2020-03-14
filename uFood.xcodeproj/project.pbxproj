@@ -13,7 +13,6 @@
 		033C55032419B331007C1E19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033C55012419B331007C1E19 /* Main.storyboard */; };
 		033C55052419B334007C1E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033C55042419B334007C1E19 /* Assets.xcassets */; };
 		033C55082419B334007C1E19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033C55062419B334007C1E19 /* LaunchScreen.storyboard */; };
-		033C55132419B335007C1E19 /* uFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55122419B335007C1E19 /* uFoodTests.swift */; };
 		033C55222419B584007C1E19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55212419B584007C1E19 /* BaseViewController.swift */; };
 		033C55282419B847007C1E19 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55262419B847007C1E19 /* PlaceTableViewCell.swift */; };
 		033C55292419B847007C1E19 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033C55272419B847007C1E19 /* PlaceTableViewCell.xib */; };
@@ -22,12 +21,17 @@
 		033C55332419BDB2007C1E19 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55322419BDB2007C1E19 /* CellViewModel.swift */; };
 		033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55382419C1F5007C1E19 /* PlaceCell.swift */; };
 		033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */; };
+		036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD0241C402C00934F66 /* PlaceModelTests.swift */; };
+		036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD3241C503300934F66 /* ThreadHelper.swift */; };
 		03DE0C54241ADAE800D5D573 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C53241ADAE800D5D573 /* Place.swift */; };
 		03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */; };
 		03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C57241ADCC200D5D573 /* Geometry.swift */; };
 		03DE0C5A241ADCE500D5D573 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C59241ADCE500D5D573 /* Location.swift */; };
 		03DE0C5C241ADD8A00D5D573 /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C5B241ADD8A00D5D573 /* OpeningHours.swift */; };
 		03DE0C5E241ADE2200D5D573 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C5D241ADE2200D5D573 /* Photo.swift */; };
+		03DE0C60241ADF0B00D5D573 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C5F241ADF0B00D5D573 /* PlaceModel.swift */; };
+		03DE0C63241AE43400D5D573 /* RequestPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C62241AE43400D5D573 /* RequestPlaces.swift */; };
+		03DE0C65241AE47100D5D573 /* RequestImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C64241AE47100D5D573 /* RequestImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +54,6 @@
 		033C55072419B334007C1E19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033C55092419B335007C1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033C550E2419B335007C1E19 /* uFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		033C55122419B335007C1E19 /* uFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uFoodTests.swift; sourceTree = "<group>"; };
 		033C55142419B335007C1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033C55212419B584007C1E19 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		033C55262419B847007C1E19 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
@@ -60,12 +63,17 @@
 		033C55322419BDB2007C1E19 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		033C55382419C1F5007C1E19 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
+		036FFFD0241C402C00934F66 /* PlaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelTests.swift; sourceTree = "<group>"; };
+		036FFFD3241C503300934F66 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		03DE0C53241ADAE800D5D573 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		03DE0C57241ADCC200D5D573 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		03DE0C59241ADCE500D5D573 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		03DE0C5B241ADD8A00D5D573 /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		03DE0C5D241ADE2200D5D573 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		03DE0C5F241ADF0B00D5D573 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		03DE0C62241AE43400D5D573 /* RequestPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPlaces.swift; sourceTree = "<group>"; };
+		03DE0C64241AE47100D5D573 /* RequestImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		033C54FA2419B331007C1E19 /* uFood */ = {
 			isa = PBXGroup;
 			children = (
+				036FFFD2241C500500934F66 /* Helper */,
 				03DE0C51241ADA6700D5D573 /* Model */,
 				033C55342419C0E4007C1E19 /* ViewModel */,
 				033C55242419B7D2007C1E19 /* View */,
@@ -126,7 +135,7 @@
 		033C55112419B335007C1E19 /* uFoodTests */ = {
 			isa = PBXGroup;
 			children = (
-				033C55122419B335007C1E19 /* uFoodTests.swift */,
+				036FFFCF241C401300934F66 /* Model */,
 				033C55142419B335007C1E19 /* Info.plist */,
 			);
 			path = uFoodTests;
@@ -135,6 +144,7 @@
 		033C551D2419B3C6007C1E19 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				03DE0C61241AE38D00D5D573 /* Model */,
 				033C55372419C1DE007C1E19 /* Cell */,
 				033C55362419C159007C1E19 /* ViewModel */,
 			);
@@ -200,10 +210,27 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		036FFFCF241C401300934F66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				036FFFD0241C402C00934F66 /* PlaceModelTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		036FFFD2241C500500934F66 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				036FFFD3241C503300934F66 /* ThreadHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		03DE0C51241ADA6700D5D573 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				03DE0C52241ADA7700D5D573 /* Object */,
+				03DE0C5F241ADF0B00D5D573 /* PlaceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +246,15 @@
 				03DE0C5D241ADE2200D5D573 /* Photo.swift */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		03DE0C61241AE38D00D5D573 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03DE0C62241AE43400D5D573 /* RequestPlaces.swift */,
+				03DE0C64241AE47100D5D573 /* RequestImage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,7 +360,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */,
 				033C55002419B331007C1E19 /* ViewController.swift in Sources */,
+				03DE0C60241ADF0B00D5D573 /* PlaceModel.swift in Sources */,
 				03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */,
 				03DE0C5C241ADD8A00D5D573 /* OpeningHours.swift in Sources */,
 				033C55332419BDB2007C1E19 /* CellViewModel.swift in Sources */,
@@ -332,6 +370,7 @@
 				033C55222419B584007C1E19 /* BaseViewController.swift in Sources */,
 				033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */,
 				03DE0C5A241ADCE500D5D573 /* Location.swift in Sources */,
+				03DE0C65241AE47100D5D573 /* RequestImage.swift in Sources */,
 				03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */,
 				03DE0C5E241ADE2200D5D573 /* Photo.swift in Sources */,
 				033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */,
@@ -339,6 +378,7 @@
 				033C55282419B847007C1E19 /* PlaceTableViewCell.swift in Sources */,
 				033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */,
 				03DE0C54241ADAE800D5D573 /* Place.swift in Sources */,
+				03DE0C63241AE43400D5D573 /* RequestPlaces.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033C55132419B335007C1E19 /* uFoodTests.swift in Sources */,
+				036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
