@@ -128,7 +128,12 @@ extension PlaceModel: RequestPlaces {
 
 //MARK: - RequestImage
 extension PlaceModel: RequestImage {
-    func image(url: URL?, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void) {
+    func image(photoReference: String, maxWidth: Int = 750, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void) {
+        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAAT&key=YOUR_API_KEY
+        
+        let baseImageUrl = "https://maps.googleapis.com/maps/api/place/photo"
+        let url = URL(string: baseImageUrl + "?maxwidth=\(maxWidth)&photoreference=\(photoReference)&key=\(key)")
+        
         request(url: url) { (result) in
             switch result {
             case .failure(let error): completionHandler(.failure(error))

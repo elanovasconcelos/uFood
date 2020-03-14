@@ -9,5 +9,5 @@
 import UIKit
 
 protocol RequestImage {
-    func image(url: URL?, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void)
+    func image(photoReference: String, maxWidth: Int, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void)
 }

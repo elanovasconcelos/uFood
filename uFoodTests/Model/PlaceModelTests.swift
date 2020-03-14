@@ -50,4 +50,21 @@ class PlaceModelTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
+    func testRequestImage() {
+        let photoReference = "CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU"
+        let expectation = self.expectation(description: "image")
+        let placeModel = PlaceModel()
+        
+        placeModel.image(photoReference: photoReference) { (result) in
+            switch result {
+            case .failure(let error): XCTAssertTrue(false, "error received: \(error)")
+            case .success(let image):
+                XCTAssertNotNil(image.jpegData(compressionQuality: 1))
+            }
+            
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
