@@ -28,7 +28,6 @@ final class PlaceListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
         updatePlaces()
     }
     
@@ -59,6 +58,16 @@ final class PlaceListViewController: BaseViewController {
         placeListViewModel.requestPlaces()
     }
 
+    override func rowSelected(at indexPath: IndexPath) {
+        if let place = placeListViewModel.place(at: indexPath) {
+            let placeDetailViewModel = PlaceDetailViewModel(place: place)
+            let controller = PlaceDetailViewController(placeDetailViewModel: placeDetailViewModel)
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else {
+            print("PlaceListViewController|rowSelected: nil place")
+        }
+    }
 }
 
 extension PlaceListViewController: PlaceListViewModelDelegate {

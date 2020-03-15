@@ -71,6 +71,10 @@ class BaseViewController: UIViewController {
         
         activityIndicator.centerAnchor(view: view)
     }
+    
+    func rowSelected(at indexPath: IndexPath) {
+        
+    }
 }
 
 //MARK: - Public functions
@@ -102,16 +106,11 @@ extension BaseViewController {
             self.tableView.reloadData()
         }
     }
-    
-    func rowSelected(at indexPath: IndexPath) {
-        
-    }
 }
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
 extension BaseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("items.count: \(items.count)")
         return items.count
     }
 
