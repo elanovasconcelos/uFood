@@ -28,6 +28,9 @@
 		036FFFE3241D87FF00934F66 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE1241D87FF00934F66 /* ImageTableViewCell.swift */; };
 		036FFFE4241D87FF00934F66 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036FFFE2241D87FF00934F66 /* ImageTableViewCell.xib */; };
 		036FFFE6241D88D100934F66 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE5241D88D100934F66 /* ImageCell.swift */; };
+		036FFFE8241D89EC00934F66 /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE7241D89EC00934F66 /* ImageCellViewModel.swift */; };
+		036FFFEA241D8D5700934F66 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE9241D8D5700934F66 /* PlaceDetailViewController.swift */; };
+		036FFFEC241D8DA600934F66 /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFEB241D8DA600934F66 /* PlaceDetailViewModel.swift */; };
 		03DE0C54241ADAE800D5D573 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C53241ADAE800D5D573 /* Place.swift */; };
 		03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */; };
 		03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C57241ADCC200D5D573 /* Geometry.swift */; };
@@ -75,6 +78,9 @@
 		036FFFE1241D87FF00934F66 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		036FFFE2241D87FF00934F66 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
 		036FFFE5241D88D100934F66 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		036FFFE7241D89EC00934F66 /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
+		036FFFE9241D8D5700934F66 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		036FFFEB241D8DA600934F66 /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewModel.swift; sourceTree = "<group>"; };
 		03DE0C53241ADAE800D5D573 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		03DE0C57241ADCC200D5D573 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			children = (
 				033C55212419B584007C1E19 /* BaseViewController.swift */,
 				036FFFD6241D006B00934F66 /* PlaceListViewController.swift */,
+				036FFFE9241D8D5700934F66 /* PlaceDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */,
+				036FFFE7241D89EC00934F66 /* ImageCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				036FFFDA241D188E00934F66 /* PlaceListViewModel.swift */,
+				036FFFEB241D8DA600934F66 /* PlaceDetailViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,12 +425,15 @@
 				036FFFE0241D215700934F66 /* UITableViewExtension.swift in Sources */,
 				036FFFE3241D87FF00934F66 /* ImageTableViewCell.swift in Sources */,
 				033C552C2419B866007C1E19 /* ReviewTableViewCell.swift in Sources */,
+				036FFFEC241D8DA600934F66 /* PlaceDetailViewModel.swift in Sources */,
 				033C55222419B584007C1E19 /* BaseViewController.swift in Sources */,
 				033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */,
 				03DE0C5A241ADCE500D5D573 /* Location.swift in Sources */,
 				03DE0C65241AE47100D5D573 /* RequestImage.swift in Sources */,
+				036FFFEA241D8D5700934F66 /* PlaceDetailViewController.swift in Sources */,
 				036FFFDB241D188E00934F66 /* PlaceListViewModel.swift in Sources */,
 				03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */,
+				036FFFE8241D89EC00934F66 /* ImageCellViewModel.swift in Sources */,
 				03DE0C5E241ADE2200D5D573 /* Photo.swift in Sources */,
 				033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */,
 				033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */,
