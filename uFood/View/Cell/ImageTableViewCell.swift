@@ -10,6 +10,7 @@ import UIKit
 
 final class ImageTableViewCell: UITableViewCell, ImageCell {
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var cellImageView: UIImageView!
     
 }

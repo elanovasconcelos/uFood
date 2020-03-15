@@ -10,4 +10,5 @@ import UIKit
 
 protocol ImageCell {
     var cellImageView: UIImageView! { get }
+    var activityIndicator: UIActivityIndicatorView! { get }
 }
