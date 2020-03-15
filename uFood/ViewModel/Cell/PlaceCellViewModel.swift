@@ -14,8 +14,10 @@ final class PlaceCellViewModel: NSObject, CellViewModel {
     let name: String
     let openNow: String
     let rating: String
+    let place: Place
     
     init(place: Place) {
+        self.place = place
         self.name = place.name
         self.rating = "Rating: \(place.rating)"
         
@@ -36,7 +38,7 @@ final class PlaceCellViewModel: NSObject, CellViewModel {
         cell.ratingLabel.text = rating
     }
     
-
+    //MARK: - 
     static func from(places: [Place]) -> [PlaceCellViewModel] {
         return places.map({ PlaceCellViewModel(place: $0) })
     }

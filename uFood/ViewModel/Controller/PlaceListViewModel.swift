@@ -40,4 +40,14 @@ final class PlaceListViewModel: NSObject {
             }
         }
     }
+    
+    func place(at indexPath: IndexPath) -> Place? {
+        let row = indexPath.row
+        
+        if row >= cellModels.value.count {
+            return nil
+        }
+        
+        return cellModels.value[row].place
+    }
 }
