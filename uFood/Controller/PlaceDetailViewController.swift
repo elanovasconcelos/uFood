@@ -32,6 +32,7 @@ final class PlaceDetailViewController: BaseViewController {
     }
     
     private func setup() {
+        title = "Detail"
         setupBinding()
     }
 

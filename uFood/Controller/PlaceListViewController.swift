@@ -32,6 +32,8 @@ final class PlaceListViewController: BaseViewController {
     }
     
     private func setup() {
+        title = "Places"
+        
         setupViewModel()
         setupBinding()
         setupTable()
