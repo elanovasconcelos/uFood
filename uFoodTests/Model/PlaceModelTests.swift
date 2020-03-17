@@ -34,6 +34,7 @@ class PlaceModelTests: XCTestCase {
                 if !result.places.isEmpty {
                     let place = result.places[0]
                     
+                    XCTAssertFalse(place.placeId.isEmpty)
                     XCTAssertFalse(place.address.isEmpty)
                     XCTAssertFalse(place.name.isEmpty)
                     XCTAssertFalse(place.photos.isEmpty)
@@ -79,6 +80,7 @@ class PlaceModelTests: XCTestCase {
             case .success(let result):
                 let place = result.place
                 
+                XCTAssertFalse(place.placeId.isEmpty)
                 XCTAssertEqual(result.status, PlaceModel.okStatus)
                 XCTAssertFalse(place.address.isEmpty)
                 XCTAssertFalse(place.name.isEmpty)

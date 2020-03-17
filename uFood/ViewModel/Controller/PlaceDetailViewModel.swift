@@ -10,20 +10,22 @@ import UIKit
 
 final class PlaceDetailViewModel: NSObject {
 
-    private let server: RequestImage
+    private let server: RequestImage & RequestPlaces
+    private(set) var cellModels = Observable<[CellViewModel]>([])
     
     let imageCellViewModel = ImageCellViewModel()
-    let cellModels = Observable<[CellViewModel]>([])
     let cellIdentifiers = [PlaceCellViewModel.cellIdentifier,
-                           ImageCellViewModel.cellIdentifier]
+                           ImageCellViewModel.cellIdentifier,
+                           ReviewCellViewModel.cellIdentifier]
     
     
-    init(place: Place, server: RequestImage = PlaceModel()) {
+    init(place: Place, server: RequestImage & RequestPlaces = PlaceModel()) {
         self.server = server
         super.init()
         
         setupModel(place: place)
         requestImage(photos: place.photos)
+        requestDetail(for: place)
     }
     
     private func setupModel(place: Place) {
@@ -48,6 +50,18 @@ final class PlaceDetailViewModel: NSObject {
                 self?.imageCellViewModel.image.value = nil
             case .success(let image):
                 self?.imageCellViewModel.image.value = image
+            }
+        }
+    }
+    
+    private func requestDetail(for place: Place) {
+        server.details(for: place.placeId) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print("requestDetail|error: \(error)")
+            case .success(let detailResponse):
+                let models = ReviewCellViewModel.from(reviews: detailResponse.place.reviews)
+                self?.cellModels.value.append(contentsOf: models)
             }
         }
     }
