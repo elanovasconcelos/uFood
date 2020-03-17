@@ -14,7 +14,7 @@ final class ReviewCellViewModel: NSObject, CellViewModel {
     let isLoading = Observable<Bool>(true)
     let image = Observable<UIImage?>(nil)
     let authorName: String
-    let profilePhotoUrl: String
+    let photoUrl: URL?
     let rating: String
     let timeDescription: String
     let text: String
@@ -22,7 +22,7 @@ final class ReviewCellViewModel: NSObject, CellViewModel {
     //MARK: -
     init(review: Review) {
         self.authorName = review.authorName
-        self.profilePhotoUrl = review.profilePhotoUrl
+        self.photoUrl = URL(string: review.profilePhotoUrl)
         self.rating = "\(review.rating)"
         self.timeDescription = review.relativeTimeDescription
         self.text = review.text
@@ -33,6 +33,7 @@ final class ReviewCellViewModel: NSObject, CellViewModel {
         
         configureLabel(in: cell)
         configureBinding(for: cell)
+        requestImage()
     }
     
     private func configureLabel(in cell: ReviewCell) {
@@ -56,7 +57,25 @@ final class ReviewCellViewModel: NSObject, CellViewModel {
         }
     }
 
-    static func from(reviews: [Review]) -> [ReviewCellViewModel] {
+    func requestImage(cache: Cache = Cache.shared) {
+        isLoading.value = true
+        image.value = nil
+        
+        cache.image(for: photoUrl) { [weak self] (result) in
+            self?.isLoading.value = false
+            
+            switch result {
+            case .failure(let error):
+                print("[ReviewCellViewModel|requestImage]: \(error)")
+                self?.image.value = nil
+            case .success(let image): self?.image.value = image
+            }
+        }
+    }
+    
+    static func from(reviews: [Review]?) -> [ReviewCellViewModel] {
+        guard let reviews = reviews else { return [] }
+        
         return reviews.map({ ReviewCellViewModel(review: $0) })
     }
 }
