@@ -124,6 +124,18 @@ extension PlaceModel: RequestPlaces {
             completionHandler(.success(response))
         }
     }
+    
+    func details(for placeId: String, completionHandler: @escaping (Result<DetailResponse, ServerError>) -> Void) {
+        //https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t&fields=name,rating&key=YOUR_API_KEY
+        let baseDetailsUrl = "https://maps.googleapis.com/maps/api/place/details/json"
+        let fields = "&fields=name,rating,address_component,adr_address,photo,vicinity,review,opening_hours"
+        let placeIdField = "?place_id=\(placeId)"
+        let keyField = "&key=\(key)"
+        let url = URL(string: baseDetailsUrl + placeIdField + fields + keyField)
+        
+        print("url: \(String(describing: url))")
+        requestModel(url: url, completionHandler: completionHandler)
+    }
 }
 
 //MARK: - RequestImage

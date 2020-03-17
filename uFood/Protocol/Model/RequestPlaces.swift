@@ -10,6 +10,7 @@ import UIKit
 
 protocol RequestPlaces {
     func places(at location: Location, types: [RequestPlacesType], completionHandler: @escaping (Result<PlaceResponse, ServerError>) -> Void)
+    func details(for placeId: String, completionHandler: @escaping (Result<DetailResponse, ServerError>) -> Void)
 }
 
 //MARK: -
