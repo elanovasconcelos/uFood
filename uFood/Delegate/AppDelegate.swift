@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = PlaceListViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
 
+        navigationController.navigationBar.barTintColor = .systemRed
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         mainViewController.willMove(toParent: navigationController)
         
         return navigationController

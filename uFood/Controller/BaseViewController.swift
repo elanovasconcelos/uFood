@@ -54,8 +54,17 @@ class BaseViewController: UIViewController {
     }
     
     private func setup() {
+        setupController()
         setupTableView()
         setupIndicator()
+    }
+    
+    private func setupController() {
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
     }
     
     private func setupTableView() {
