@@ -14,6 +14,7 @@ struct Place: Decodable {
     let rating: Double
     let openingHours: OpeningHours?
     let photos: [Photo]
+    let reviews: [Review]?
     
     private enum CodingKeys : String, CodingKey {
         case address = "vicinity"
@@ -21,6 +22,7 @@ struct Place: Decodable {
         case name
         case rating
         case photos
+        case reviews
     }
 }
 

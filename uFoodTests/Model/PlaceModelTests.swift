@@ -67,4 +67,40 @@ class PlaceModelTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testRequestDetail() {
+        let placeId = "ChIJN1t_tDeuEmsRUsoyG83frY4"
+        let expectation = self.expectation(description: "detail")
+        let placeModel = PlaceModel()
+        
+        placeModel.details(for: placeId) { (result) in
+            switch result {
+            case .failure(let error): XCTAssertTrue(false, "error received: \(error)")
+            case .success(let result):
+                let place = result.place
+                
+                XCTAssertEqual(result.status, PlaceModel.okStatus)
+                XCTAssertFalse(place.address.isEmpty)
+                XCTAssertFalse(place.name.isEmpty)
+                XCTAssertFalse(place.photos.isEmpty)
+                XCTAssertTrue(place.rating > 0)
+                XCTAssertNotNil(place.reviews)
+                
+                if let reviews = place.reviews {
+                    XCTAssertFalse(reviews.isEmpty)
+                }
+                
+                if let review = place.reviews?.first {
+                    XCTAssertFalse(review.authorName.isEmpty)
+                    XCTAssertFalse(review.profilePhotoUrl.isEmpty)
+                    XCTAssertFalse(review.relativeTimeDescription.isEmpty)
+                    XCTAssertFalse(review.text.isEmpty)
+                    XCTAssertTrue(review.rating > 0)
+                }
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }

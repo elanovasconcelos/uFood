@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032B950B242036B2002B1563 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B950A242036B2002B1563 /* DetailResponse.swift */; };
 		033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FB2419B331007C1E19 /* AppDelegate.swift */; };
 		033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FD2419B331007C1E19 /* SceneDelegate.swift */; };
 		033C55052419B334007C1E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033C55042419B334007C1E19 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		036FFFE8241D89EC00934F66 /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE7241D89EC00934F66 /* ImageCellViewModel.swift */; };
 		036FFFEA241D8D5700934F66 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFE9241D8D5700934F66 /* PlaceDetailViewController.swift */; };
 		036FFFEC241D8DA600934F66 /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFEB241D8DA600934F66 /* PlaceDetailViewModel.swift */; };
+		03D6E26D241E71CD002AE587 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6E26C241E71CD002AE587 /* Review.swift */; };
 		03DE0C54241ADAE800D5D573 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C53241ADAE800D5D573 /* Place.swift */; };
 		03DE0C56241ADB6400D5D573 /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */; };
 		03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE0C57241ADCC200D5D573 /* Geometry.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032B950A242036B2002B1563 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
 		033C54F82419B331007C1E19 /* uFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033C54FB2419B331007C1E19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033C54FD2419B331007C1E19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		036FFFE7241D89EC00934F66 /* ImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
 		036FFFE9241D8D5700934F66 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		036FFFEB241D8DA600934F66 /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewModel.swift; sourceTree = "<group>"; };
+		03D6E26C241E71CD002AE587 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		03DE0C53241ADAE800D5D573 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		03DE0C55241ADB6400D5D573 /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		03DE0C57241ADCC200D5D573 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 				03DE0C59241ADCE500D5D573 /* Location.swift */,
 				03DE0C5B241ADD8A00D5D573 /* OpeningHours.swift */,
 				03DE0C5D241ADE2200D5D573 /* Photo.swift */,
+				03D6E26C241E71CD002AE587 /* Review.swift */,
+				032B950A242036B2002B1563 /* DetailResponse.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -419,12 +425,14 @@
 				036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */,
 				03DE0C60241ADF0B00D5D573 /* PlaceModel.swift in Sources */,
 				03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */,
+				032B950B242036B2002B1563 /* DetailResponse.swift in Sources */,
 				03DE0C5C241ADD8A00D5D573 /* OpeningHours.swift in Sources */,
 				033C55332419BDB2007C1E19 /* CellViewModel.swift in Sources */,
 				036FFFE6241D88D100934F66 /* ImageCell.swift in Sources */,
 				036FFFE0241D215700934F66 /* UITableViewExtension.swift in Sources */,
 				036FFFE3241D87FF00934F66 /* ImageTableViewCell.swift in Sources */,
 				033C552C2419B866007C1E19 /* ReviewTableViewCell.swift in Sources */,
+				03D6E26D241E71CD002AE587 /* Review.swift in Sources */,
 				036FFFEC241D8DA600934F66 /* PlaceDetailViewModel.swift in Sources */,
 				033C55222419B584007C1E19 /* BaseViewController.swift in Sources */,
 				033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */,
