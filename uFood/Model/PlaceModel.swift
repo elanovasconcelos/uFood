@@ -128,7 +128,7 @@ extension PlaceModel: RequestPlaces {
     func details(for placeId: String, completionHandler: @escaping (Result<DetailResponse, ServerError>) -> Void) {
         //https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t&fields=name,rating&key=YOUR_API_KEY
         let baseDetailsUrl = "https://maps.googleapis.com/maps/api/place/details/json"
-        let fields = "&fields=name,rating,address_component,adr_address,photo,vicinity,review,opening_hours"
+        let fields = "&fields=name,rating,address_component,adr_address,photo,vicinity,review,opening_hours,place_id"
         let placeIdField = "?place_id=\(placeId)"
         let keyField = "&key=\(key)"
         let url = URL(string: baseDetailsUrl + placeIdField + fields + keyField)
@@ -146,6 +146,10 @@ extension PlaceModel: RequestImage {
         let baseImageUrl = "https://maps.googleapis.com/maps/api/place/photo"
         let url = URL(string: baseImageUrl + "?maxwidth=\(maxWidth)&photoreference=\(photoReference)&key=\(key)")
         
+        image(url: url, completionHandler: completionHandler)
+    }
+    
+    func image(url: URL?, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void) {
         request(url: url) { (result) in
             switch result {
             case .failure(let error): completionHandler(.failure(error))
