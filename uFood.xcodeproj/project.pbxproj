@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		032B950B242036B2002B1563 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B950A242036B2002B1563 /* DetailResponse.swift */; };
+		032B950D2420513B002B1563 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B950C2420513B002B1563 /* ReviewCell.swift */; };
 		033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FB2419B331007C1E19 /* AppDelegate.swift */; };
 		033C54FE2419B331007C1E19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C54FD2419B331007C1E19 /* SceneDelegate.swift */; };
 		033C55052419B334007C1E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033C55042419B334007C1E19 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		032B950A242036B2002B1563 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		032B950C2420513B002B1563 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		033C54F82419B331007C1E19 /* uFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033C54FB2419B331007C1E19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033C54FD2419B331007C1E19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				033C55382419C1F5007C1E19 /* PlaceCell.swift */,
 				036FFFE5241D88D100934F66 /* ImageCell.swift */,
+				032B950C2420513B002B1563 /* ReviewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */,
+				032B950D2420513B002B1563 /* ReviewCell.swift in Sources */,
 				03DE0C60241ADF0B00D5D573 /* PlaceModel.swift in Sources */,
 				03DE0C58241ADCC200D5D573 /* Geometry.swift in Sources */,
 				032B950B242036B2002B1563 /* DetailResponse.swift in Sources */,

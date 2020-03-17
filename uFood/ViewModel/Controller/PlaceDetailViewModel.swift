@@ -37,8 +37,7 @@ final class PlaceDetailViewModel: NSObject {
             imageCellViewModel.image.value = nil
             return
         }
-        
-        print("width: \(String(describing: photos.first?.width)), height: \(String(describing: photos.first?.height))")
+
         imageCellViewModel.isLoading.value = true
         
         server.image(photoReference: reference, maxWidth: 750) { [weak self] (result) in
