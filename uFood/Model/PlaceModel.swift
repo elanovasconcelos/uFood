@@ -11,6 +11,8 @@ import UIKit
 final class PlaceModel: NSObject {
 
     static let basePlaceUrlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+    static let baseImageUrlString = "https://maps.googleapis.com/maps/api/place/photo"
+    static let baseDetailsUrlString = "https://maps.googleapis.com/maps/api/place/details/json"
     static let okStatus = "OK"
     
     private let key: String
@@ -21,18 +23,6 @@ final class PlaceModel: NSObject {
     }
     
     //MARK: -
-    func completePlaceUrl(with location: Location, type: RequestPlacesType = .restaurant) -> URL? {
-        //TODO: improve configuration, export fields for customisation
-        //location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY
-        let radius = "&radius=1500"
-        let type = "&type=\(type.rawValue)"
-        //let keyword = "keyword=restaurant"
-        let locationString = "location=\(location.latitude),\(location.longitude)"
-        let placeConfigUrlString = locationString + radius + type
-        
-        return completeUrl(for: PlaceModel.basePlaceUrlString + placeConfigUrlString)
-    }
-    
     private func completeUrl(for urlString: String) -> URL? {
         let keyString = "&key=\(key)"
         
@@ -83,6 +73,34 @@ final class PlaceModel: NSObject {
     } 
 }
 
+//MARK: -
+extension PlaceModel {
+    func completePlacesUrl(with location: Location, type: RequestPlacesType = .restaurant) -> URL? {
+        //TODO: improve configuration, export fields for customisation
+        let radius = "&radius=1500"
+        let type = "&type=\(type.rawValue)"
+        //let keyword = "keyword=restaurant"
+        let locationString = "location=\(location.latitude),\(location.longitude)"
+        let placeConfigUrlString = locationString + radius + type
+        
+        return completeUrl(for: PlaceModel.basePlaceUrlString + placeConfigUrlString)
+    }
+    
+    func completeDetailsUrl(for placeId: String) -> URL? {
+        let fields = "&fields=name,rating,address_component,adr_address,photo,vicinity,review,opening_hours,place_id"
+        let placeIdField = "?place_id=\(placeId)"
+        
+        return completeUrl(for: PlaceModel.baseDetailsUrlString + placeIdField + fields)
+    }
+    
+    func completeImageUrl(photoReference: String, maxWidth: Int = 750) -> URL? {
+        let maxwidthString = "?maxwidth=\(maxWidth)"
+        let photoreferenceString = "&photoreference=\(photoReference)"
+        
+        return completeUrl(for: PlaceModel.baseImageUrlString + maxwidthString + photoreferenceString)
+    }
+}
+
 //MARK: - RequestPlaces
 extension PlaceModel: RequestPlaces {
     func places(at location: Location, types: [RequestPlacesType] = [.bar, .restaurant, .cafe], completionHandler: @escaping (Result<PlaceResponse, ServerError>) -> Void) {
@@ -109,7 +127,7 @@ extension PlaceModel: RequestPlaces {
         for type in types {
             placeDispatchGroup.enter()
             queue.async() { [weak self] in
-                let url = self?.completePlaceUrl(with: location, type: type)
+                let url = self?.completePlacesUrl(with: location, type: type)
                 self?.requestModel(url: url, completionHandler: requestCompletionHandler)
             }
         }
@@ -126,25 +144,14 @@ extension PlaceModel: RequestPlaces {
     }
     
     func details(for placeId: String, completionHandler: @escaping (Result<DetailResponse, ServerError>) -> Void) {
-        //https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t&fields=name,rating&key=YOUR_API_KEY
-        let baseDetailsUrl = "https://maps.googleapis.com/maps/api/place/details/json"
-        let fields = "&fields=name,rating,address_component,adr_address,photo,vicinity,review,opening_hours,place_id"
-        let placeIdField = "?place_id=\(placeId)"
-        let keyField = "&key=\(key)"
-        let url = URL(string: baseDetailsUrl + placeIdField + fields + keyField)
-        
-        print("url: \(String(describing: url))")
-        requestModel(url: url, completionHandler: completionHandler)
+        requestModel(url: completeDetailsUrl(for: placeId), completionHandler: completionHandler)
     }
 }
 
 //MARK: - RequestImage
 extension PlaceModel: RequestImage {
     func image(photoReference: String, maxWidth: Int = 750, completionHandler: @escaping (Result<UIImage, ServerError>) -> Void) {
-        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAAT&key=YOUR_API_KEY
-        
-        let baseImageUrl = "https://maps.googleapis.com/maps/api/place/photo"
-        let url = URL(string: baseImageUrl + "?maxwidth=\(maxWidth)&photoreference=\(photoReference)&key=\(key)")
+        let url = completeImageUrl(photoReference: photoReference, maxWidth: maxWidth)
         
         image(url: url, completionHandler: completionHandler)
     }
