@@ -14,12 +14,20 @@ struct Review: Decodable {
     let rating: Double
     let relativeTimeDescription: String
     let text: String
+    let time: Double
     
     private enum CodingKeys : String, CodingKey {
         case rating
         case text
+        case time
         case authorName = "author_name"
         case profilePhotoUrl = "profile_photo_url"
         case relativeTimeDescription = "relative_time_description"
+    }
+}
+
+extension Review: Comparable {
+    static func < (lhs: Review, rhs: Review) -> Bool {
+        return lhs.time < rhs.time
     }
 }

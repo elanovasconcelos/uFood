@@ -60,7 +60,8 @@ final class PlaceDetailViewModel: NSObject {
             case .failure(let error):
                 print("requestDetail|error: \(error)")
             case .success(let detailResponse):
-                let models = ReviewCellViewModel.from(reviews: detailResponse.place.reviews)
+                let reviews: [Review]? = detailResponse.place.reviews?.sorted().reversed()
+                let models = ReviewCellViewModel.from(reviews: reviews)
                 self?.cellModels.value.append(contentsOf: models)
             }
         }
