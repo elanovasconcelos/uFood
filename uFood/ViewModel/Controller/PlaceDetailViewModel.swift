@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol PlaceDetailViewModelDelegate: class {
+    func placeDetailViewModel(_ placeDetailViewModel: PlaceDetailViewModel, didReceived error: ServerError)
+}
+
 final class PlaceDetailViewModel: NSObject {
 
     private let server: RequestImage & RequestPlaces
     private(set) var cellModels = Observable<[CellViewModel]>([])
+    
+    weak var delegate: PlaceDetailViewModelDelegate?
     
     let imageCellViewModel = ImageCellViewModel()
     let cellIdentifiers = [PlaceCellViewModel.cellIdentifier,
@@ -43,26 +49,30 @@ final class PlaceDetailViewModel: NSObject {
         imageCellViewModel.isLoading.value = true
         
         server.image(photoReference: reference, maxWidth: 750) { [weak self] (result) in
-            self?.imageCellViewModel.isLoading.value = false
+            guard let self = self else { return }
+            self.imageCellViewModel.isLoading.value = false
+            
             switch result {
             case .failure(let error):
-                print("requestImage|error: \(error)")
-                self?.imageCellViewModel.image.value = nil
+                self.delegate?.placeDetailViewModel(self, didReceived: error)
+                self.imageCellViewModel.image.value = nil
             case .success(let image):
-                self?.imageCellViewModel.image.value = image
+                self.imageCellViewModel.image.value = image
             }
         }
     }
     
     private func requestDetail(for place: Place) {
         server.details(for: place.placeId) { [weak self] (result) in
+            guard let self = self else { return }
+            
             switch result {
             case .failure(let error):
-                print("requestDetail|error: \(error)")
+                self.delegate?.placeDetailViewModel(self, didReceived: error)
             case .success(let detailResponse):
                 let reviews: [Review]? = detailResponse.place.reviews?.sorted().reversed()
                 let models = ReviewCellViewModel.from(reviews: reviews)
-                self?.cellModels.value.append(contentsOf: models)
+                self.cellModels.value.append(contentsOf: models)
             }
         }
     }

@@ -174,6 +174,17 @@ enum ServerError: Error {
     case decoder
     case image
     case status
+    
+    var localizedDescription: String {
+        switch self {
+        case .respone: return "No response form the server"
+        case .decoder: return "Error when trying to parse response"
+        case .noData: return "Server did not return data"
+        case .status: return "Server returs invalid status"
+        case .api: return "No response from server. Please verify your internet conection."
+        default: return "Server error"
+        }
+    }
 }
 
 

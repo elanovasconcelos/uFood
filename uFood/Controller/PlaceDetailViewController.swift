@@ -25,21 +25,27 @@ final class PlaceDetailViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     private func setup() {
         title = "Detail"
+        
+        setupViewModel()
         setupBinding()
     }
 
+    private func setupViewModel() {
+        placeDetailViewModel.delegate = self
+    }
+    
     private func setupBinding() {
         placeDetailViewModel.cellModels.valueChanged = { [weak self] newModels in
-            print("valueChanged")
             self?.items = newModels
         }
+    }
+}
+
+//MARK: - PlaceDetailViewModelDelegate
+extension PlaceDetailViewController: PlaceDetailViewModelDelegate {
+    func placeDetailViewModel(_ placeDetailViewModel: PlaceDetailViewModel, didReceived error: ServerError) {
+        AlertHelper.showSimpleAlert(self, message: error.localizedDescription)
     }
 }

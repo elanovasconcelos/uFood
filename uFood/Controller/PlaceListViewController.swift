@@ -76,5 +76,6 @@ extension PlaceListViewController: PlaceListViewModelDelegate {
     func placeListViewModel(_ placeListViewModel: PlaceListViewModel, didReceived error: ServerError) {
         hideActivityIndicator()
         print("placeListViewModel|didReceived - error: \(error)")
+        AlertHelper.showSimpleAlert(self, message: error.localizedDescription)
     }
 }
