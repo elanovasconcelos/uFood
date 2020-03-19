@@ -37,11 +37,16 @@ class PlaceModelTests: XCTestCase {
                     XCTAssertFalse(place.placeId.isEmpty)
                     XCTAssertFalse(place.address.isEmpty)
                     XCTAssertFalse(place.name.isEmpty)
-                    XCTAssertFalse(place.photos.isEmpty)
-                    XCTAssertTrue(place.rating > 0)
+                    XCTAssertFalse(place.photos?.isEmpty ?? true)
+                    XCTAssertNotNil(place.rating)
                     
-                    if let lastRating = result.places.last?.rating {
-                        XCTAssertTrue(place.rating > lastRating)
+                    if let rating = place.rating {
+                        XCTAssertTrue(rating > 0)
+                    }
+
+                    if let rating = place.rating,
+                       let lastRating = result.places.last?.rating {
+                        XCTAssertTrue(rating > lastRating)
                     }
                 }
             }
@@ -84,9 +89,13 @@ class PlaceModelTests: XCTestCase {
                 XCTAssertEqual(result.status, PlaceModel.okStatus)
                 XCTAssertFalse(place.address.isEmpty)
                 XCTAssertFalse(place.name.isEmpty)
-                XCTAssertFalse(place.photos.isEmpty)
-                XCTAssertTrue(place.rating > 0)
+                XCTAssertFalse(place.photos?.isEmpty ?? true)
                 XCTAssertNotNil(place.reviews)
+                XCTAssertNotNil(place.rating)
+                
+                if let rating = place.rating {
+                    XCTAssertTrue(rating > 0)
+                }
                 
                 if let reviews = place.reviews {
                     XCTAssertFalse(reviews.isEmpty)
