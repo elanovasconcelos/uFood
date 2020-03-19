@@ -39,8 +39,8 @@ final class PlaceDetailViewModel: NSObject {
                             PlaceCellViewModel(place: place)]
     }
     
-    private func requestImage(photos: [Photo]) {
-        guard let reference = photos.first?.photoReference else {
+    private func requestImage(photos: [Photo]?) {
+        guard let reference = photos?.first?.photoReference else {
             imageCellViewModel.isLoading.value = false
             imageCellViewModel.image.value = nil
             return

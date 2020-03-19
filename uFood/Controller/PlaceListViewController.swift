@@ -57,7 +57,7 @@ final class PlaceListViewController: BaseViewController {
     
     private func updatePlaces() {
         showActivityIndicator()
-        placeListViewModel.requestPlaces()
+        placeListViewModel.requestLocation()
     }
 
     override func rowSelected(at indexPath: IndexPath) {
