@@ -44,6 +44,7 @@
                     <constraint firstItem="zqi-QD-VTD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="PCa-i9-eXG"/>
                     <constraint firstItem="8Sl-r9-zJD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ieU-5J-zax"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dG8-2Z-OAR" secondAttribute="trailing" id="jGl-bm-BW5"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="dG8-2Z-OAR" secondAttribute="bottom" id="nRj-dT-Aoi"/>
                     <constraint firstItem="dG8-2Z-OAR" firstAttribute="top" secondItem="8Sl-r9-zJD" secondAttribute="bottom" constant="8" symbolic="YES" id="yZI-FK-Lg9"/>
                 </constraints>
             </tableViewCellContentView>
