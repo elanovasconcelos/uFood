@@ -17,6 +17,24 @@ struct Place: Decodable {
     let photos: [Photo]?
     let reviews: [Review]?
     
+    init(placeId: String = "",
+         address: String = "",
+         name: String = "",
+         rating: Double? = nil,
+         openingHours: OpeningHours? = nil,
+         photos: [Photo]? = nil,
+         reviews: [Review]? = nil)
+    {
+        self.placeId = placeId
+        self.address = address
+        self.name = name
+        self.rating = rating
+        self.openingHours = openingHours
+        self.photos = photos
+        self.reviews = reviews
+    }
+    
+    //MARK: -
     private enum CodingKeys : String, CodingKey {
         case address = "vicinity"
         case openingHours = "opening_hours"

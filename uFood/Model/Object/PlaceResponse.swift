@@ -9,9 +9,15 @@
 import UIKit
 
 struct PlaceResponse: Decodable {
-    let places: [Place] //candidates
+    let places: [Place]
     let status: String
     
+    init(places: [Place], status: String = "OK") {
+        self.places = places
+        self.status = status
+    }
+    
+    //MARK: -
     private enum CodingKeys : String, CodingKey {
         case places = "results"
         case status
