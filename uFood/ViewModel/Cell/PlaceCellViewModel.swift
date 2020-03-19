@@ -19,8 +19,13 @@ final class PlaceCellViewModel: NSObject, CellViewModel {
     init(place: Place) {
         self.place = place
         self.name = place.name
-        self.rating = "Rating: \(place.rating)"
         
+        if let rating = place.rating {
+            self.rating =  "Rating: \(rating)"
+        }else {
+            self.rating = ""
+        }
+
         if let openNow = place.openingHours?.openNow, openNow {
             self.openNow = "Open Now!"
         }else {

@@ -12,9 +12,9 @@ struct Place: Decodable {
     let placeId: String
     let address: String
     let name: String
-    let rating: Double
+    let rating: Double?
     let openingHours: OpeningHours?
-    let photos: [Photo]
+    let photos: [Photo]?
     let reviews: [Review]?
     
     private enum CodingKeys : String, CodingKey {
@@ -35,6 +35,9 @@ extension Place: Comparable {
     }
     
     static func < (lhs: Place, rhs: Place) -> Bool {
-        return lhs.rating < rhs.rating
+        let first = lhs.rating ?? 0
+        let second = rhs.rating ?? 0
+        
+        return first < second
     }
 }
