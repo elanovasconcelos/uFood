@@ -12,6 +12,12 @@ struct DetailResponse: Decodable {
     let place: Place
     let status: String
     
+    init(place: Place, status: String = "OK") {
+        self.place = place
+        self.status = status
+    }
+    
+    //MARK: -
     private enum CodingKeys : String, CodingKey {
         case place = "result"
         case status
