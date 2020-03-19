@@ -56,8 +56,7 @@ final class PlaceListViewModel: NSObject {
             }
         }
     }
-    
-    
+
     /// Returns a Place for a table IndexPath if the index is valid.
     /// - Parameter indexPath: indexPath of a place
     func place(at indexPath: IndexPath) -> Place? {
@@ -71,8 +70,8 @@ final class PlaceListViewModel: NSObject {
     }
 }
 
-extension PlaceListViewModel: LocationModelDelegate {
-    func locationModel(_ locationModel: LocationModel, didChange location: Location) {
+extension PlaceListViewModel: RequestLocationDelegate {
+    func locationModel(_ locationModel: RequestLocation, didChange location: Location) {
         if currentLocation != nil {
             return
         }

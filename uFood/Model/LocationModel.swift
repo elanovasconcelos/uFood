@@ -9,15 +9,11 @@
 import UIKit
 import CoreLocation
 
-protocol LocationModelDelegate: class {
-    func locationModel(_ locationModel: LocationModel, didChange location: Location)
-}
-
 final class LocationModel: NSObject, RequestLocation {
     
     private let locationManager: CLLocationManager
     
-    weak var delegate: LocationModelDelegate?
+    weak var delegate: RequestLocationDelegate?
     
     override init() {
         locationManager = CLLocationManager()

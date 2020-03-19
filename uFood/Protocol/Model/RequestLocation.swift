@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol RequestLocationDelegate: class {
+    func locationModel(_ locationModel: RequestLocation, didChange location: Location)
+}
+
 protocol RequestLocation: class {
+    var delegate: RequestLocationDelegate? { get set }
+    
     func requestWhenInUseAuthorization()
     func updateLocation()
     func stopUpdateLocation()
-    
-    var delegate: LocationModelDelegate? { get set }
 }
 
