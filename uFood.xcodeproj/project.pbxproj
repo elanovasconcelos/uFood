@@ -26,6 +26,9 @@
 		033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */; };
 		036868B22422E8E2000C1A45 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B12422E8E2000C1A45 /* LocationModel.swift */; };
 		036868B42423010D000C1A45 /* RequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B32423010D000C1A45 /* RequestLocation.swift */; };
+		036868BA242304B2000C1A45 /* PlaceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B9242304B2000C1A45 /* PlaceListViewModelTests.swift */; };
+		036868BD24230666000C1A45 /* MockRequestPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868BC24230666000C1A45 /* MockRequestPlaces.swift */; };
+		036868C02423088A000C1A45 /* PlaceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868BF2423088A000C1A45 /* PlaceExtension.swift */; };
 		036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD0241C402C00934F66 /* PlaceModelTests.swift */; };
 		036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD3241C503300934F66 /* ThreadHelper.swift */; };
 		036FFFD7241D006B00934F66 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD6241D006B00934F66 /* PlaceListViewController.swift */; };
@@ -84,6 +87,9 @@
 		033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		036868B12422E8E2000C1A45 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		036868B32423010D000C1A45 /* RequestLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocation.swift; sourceTree = "<group>"; };
+		036868B9242304B2000C1A45 /* PlaceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModelTests.swift; sourceTree = "<group>"; };
+		036868BC24230666000C1A45 /* MockRequestPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestPlaces.swift; sourceTree = "<group>"; };
+		036868BF2423088A000C1A45 /* PlaceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceExtension.swift; sourceTree = "<group>"; };
 		036FFFD0241C402C00934F66 /* PlaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelTests.swift; sourceTree = "<group>"; };
 		036FFFD3241C503300934F66 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		036FFFD6241D006B00934F66 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +171,9 @@
 		033C55112419B335007C1E19 /* uFoodTests */ = {
 			isa = PBXGroup;
 			children = (
+				036868BE24230866000C1A45 /* Extension */,
+				036868BB24230652000C1A45 /* Mock */,
+				036868B52423046A000C1A45 /* ViewModel */,
 				036FFFCF241C401300934F66 /* Model */,
 				033C55142419B335007C1E19 /* Info.plist */,
 			);
@@ -247,6 +256,38 @@
 				032B950C2420513B002B1563 /* ReviewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		036868B52423046A000C1A45 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				036868B624230478000C1A45 /* Controller */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		036868B624230478000C1A45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				036868B9242304B2000C1A45 /* PlaceListViewModelTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		036868BB24230652000C1A45 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				036868BC24230666000C1A45 /* MockRequestPlaces.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		036868BE24230866000C1A45 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				036868BF2423088A000C1A45 /* PlaceExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		036FFFCF241C401300934F66 /* Model */ = {
@@ -482,6 +523,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036868BA242304B2000C1A45 /* PlaceListViewModelTests.swift in Sources */,
+				036868C02423088A000C1A45 /* PlaceExtension.swift in Sources */,
+				036868BD24230666000C1A45 /* MockRequestPlaces.swift in Sources */,
 				036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
