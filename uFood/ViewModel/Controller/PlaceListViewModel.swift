@@ -33,12 +33,14 @@ final class PlaceListViewModel: NSObject {
         location.delegate = self
     }
     
+    /// Requests a location or the permission to get it if is the first time.
     func requestLocation() {
         currentLocation = nil
         location.requestWhenInUseAuthorization()
         location.updateLocation()
     }
     
+    /// Requests places for the current location. It's called automaticaly aftert get a location.
     func requestPlaces() {
         guard let currentLocation = currentLocation else { return }
         
@@ -55,6 +57,9 @@ final class PlaceListViewModel: NSObject {
         }
     }
     
+    
+    /// Returns a Place for a table IndexPath if the index is valid.
+    /// - Parameter indexPath: indexPath of a place
     func place(at indexPath: IndexPath) -> Place? {
         let row = indexPath.row
         
