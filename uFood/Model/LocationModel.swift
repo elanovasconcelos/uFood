@@ -13,7 +13,7 @@ protocol LocationModelDelegate: class {
     func locationModel(_ locationModel: LocationModel, didChange location: Location)
 }
 
-final class LocationModel: NSObject {
+final class LocationModel: NSObject, RequestLocation {
     
     private let locationManager: CLLocationManager
     
@@ -30,10 +30,6 @@ final class LocationModel: NSObject {
     
     func requestWhenInUseAuthorization() {
         locationManager.requestWhenInUseAuthorization()
-    }
-    
-    func locationServicesEnabled() -> Bool {
-        return CLLocationManager.locationServicesEnabled()
     }
 
     /// It starts trying to get a location. The location will return by the delegate just one time if possible.

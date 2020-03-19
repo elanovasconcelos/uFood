@@ -25,6 +25,7 @@
 		033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55382419C1F5007C1E19 /* PlaceCell.swift */; };
 		033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */; };
 		036868B22422E8E2000C1A45 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B12422E8E2000C1A45 /* LocationModel.swift */; };
+		036868B42423010D000C1A45 /* RequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B32423010D000C1A45 /* RequestLocation.swift */; };
 		036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD0241C402C00934F66 /* PlaceModelTests.swift */; };
 		036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD3241C503300934F66 /* ThreadHelper.swift */; };
 		036FFFD7241D006B00934F66 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD6241D006B00934F66 /* PlaceListViewController.swift */; };
@@ -82,6 +83,7 @@
 		033C55382419C1F5007C1E19 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		036868B12422E8E2000C1A45 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		036868B32423010D000C1A45 /* RequestLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocation.swift; sourceTree = "<group>"; };
 		036FFFD0241C402C00934F66 /* PlaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelTests.swift; sourceTree = "<group>"; };
 		036FFFD3241C503300934F66 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		036FFFD6241D006B00934F66 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				03DE0C62241AE43400D5D573 /* RequestPlaces.swift */,
 				03DE0C64241AE47100D5D573 /* RequestImage.swift */,
+				036868B32423010D000C1A45 /* RequestLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				033C55222419B584007C1E19 /* BaseViewController.swift in Sources */,
 				032B950F24205A13002B1563 /* ReviewCellViewModel.swift in Sources */,
 				033C54FC2419B331007C1E19 /* AppDelegate.swift in Sources */,
+				036868B42423010D000C1A45 /* RequestLocation.swift in Sources */,
 				03DE0C5A241ADCE500D5D573 /* Location.swift in Sources */,
 				03DE0C65241AE47100D5D573 /* RequestImage.swift in Sources */,
 				036FFFEA241D8D5700934F66 /* PlaceDetailViewController.swift in Sources */,

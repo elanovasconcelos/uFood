@@ -15,7 +15,7 @@ protocol PlaceListViewModelDelegate: class {
 final class PlaceListViewModel: NSObject {
 
     private let server: RequestPlaces
-    private let location: LocationModel
+    private let location: RequestLocation
     private var currentLocation: Location? { didSet { requestPlaces() } }
     
     weak var delegate: PlaceListViewModelDelegate?
@@ -24,7 +24,7 @@ final class PlaceListViewModel: NSObject {
     let cellIdentifiers = [PlaceCellViewModel.cellIdentifier]
     
     //MARK: -
-    init(server: RequestPlaces = PlaceModel(), location: LocationModel = LocationModel()) {
+    init(server: RequestPlaces = PlaceModel(), location: RequestLocation = LocationModel()) {
         self.server = server
         self.location = location
         
