@@ -24,6 +24,7 @@
 		033C55332419BDB2007C1E19 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55322419BDB2007C1E19 /* CellViewModel.swift */; };
 		033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C55382419C1F5007C1E19 /* PlaceCell.swift */; };
 		033C553B2419C424007C1E19 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */; };
+		036868B22422E8E2000C1A45 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036868B12422E8E2000C1A45 /* LocationModel.swift */; };
 		036FFFD1241C402C00934F66 /* PlaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD0241C402C00934F66 /* PlaceModelTests.swift */; };
 		036FFFD4241C503300934F66 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD3241C503300934F66 /* ThreadHelper.swift */; };
 		036FFFD7241D006B00934F66 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FFFD6241D006B00934F66 /* PlaceListViewController.swift */; };
@@ -80,6 +81,7 @@
 		033C55322419BDB2007C1E19 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		033C55382419C1F5007C1E19 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		033C553A2419C424007C1E19 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
+		036868B12422E8E2000C1A45 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		036FFFD0241C402C00934F66 /* PlaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelTests.swift; sourceTree = "<group>"; };
 		036FFFD3241C503300934F66 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		036FFFD6241D006B00934F66 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				03DE0C52241ADA7700D5D573 /* Object */,
 				03DE0C5F241ADF0B00D5D573 /* PlaceModel.swift */,
+				036868B12422E8E2000C1A45 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				033C55392419C1F5007C1E19 /* PlaceCell.swift in Sources */,
 				036FFFDE241D213000934F66 /* UIViewExtension.swift in Sources */,
 				03DE0C54241ADAE800D5D573 /* Place.swift in Sources */,
+				036868B22422E8E2000C1A45 /* LocationModel.swift in Sources */,
 				03DE0C63241AE43400D5D573 /* RequestPlaces.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NGU942N6D;
 				INFOPLIST_FILE = uFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -637,6 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NGU942N6D;
 				INFOPLIST_FILE = uFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
