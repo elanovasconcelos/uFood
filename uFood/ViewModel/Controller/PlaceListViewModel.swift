@@ -15,7 +15,8 @@ protocol PlaceListViewModelDelegate: class {
 final class PlaceListViewModel: NSObject {
 
     private let server: RequestPlaces
-    private let location = Location(latitude: -33.8670522, longitude: 151.1957362)
+    private let location: LocationModel
+    private var currentLocation: Location? { didSet { requestPlaces() } }
     
     weak var delegate: PlaceListViewModelDelegate?
     
@@ -23,12 +24,25 @@ final class PlaceListViewModel: NSObject {
     let cellIdentifiers = [PlaceCellViewModel.cellIdentifier]
     
     //MARK: -
-    init(server: RequestPlaces = PlaceModel()) {
+    init(server: RequestPlaces = PlaceModel(), location: LocationModel = LocationModel()) {
         self.server = server
+        self.location = location
+        
+        super.init()
+        
+        location.delegate = self
+    }
+    
+    func requestLocation() {
+        currentLocation = nil
+        location.requestWhenInUseAuthorization()
+        location.updateLocation()
     }
     
     func requestPlaces() {
-        server.places(at: location, types: [.bar, .cafe, .restaurant]) { [weak self] (result) in
+        guard let currentLocation = currentLocation else { return }
+        
+        server.places(at: currentLocation, types: [.bar, .cafe, .restaurant]) { [weak self] (result) in
             
             guard let self = self else { return }
             
@@ -49,5 +63,14 @@ final class PlaceListViewModel: NSObject {
         }
         
         return cellModels.value[row].place
+    }
+}
+
+extension PlaceListViewModel: LocationModelDelegate {
+    func locationModel(_ locationModel: LocationModel, didChange location: Location) {
+        if currentLocation != nil {
+            return
+        }
+        currentLocation = location
     }
 }
